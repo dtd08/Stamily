@@ -147,7 +147,7 @@ Stamily란 라틴어로 **'안정'** 의 뜻을 가진 'stabilitas' 와 **'함�
   JSON 파일로 데이터를 저장/수정하는 것을 택함. )
 <br/>
 
-[Stamily ERD]
+![Stamily ERD](https://github.com/user-attachments/assets/f1e96ef4-af14-4297-a943-ee4f4d10c13e)
 
 
 <br/><br/>
