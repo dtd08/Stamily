@@ -140,7 +140,7 @@ Stamily란 라틴어로 **'안정'** 의 뜻을 가진 'stabilitas' 와 **'함�
 <br/><br/>
 
 
-## DB 구조도
+## [DB 구조도](https://docs.google.com/spreadsheets/d/1Z5KF_flwrrfkXitKizuEs6OiIb9__gVJ2mbSkTTmZfM/edit?usp=sharing)
 **Entity 종류**: 학생(student), 선생(teather), 방과후정보(after_class), 질문(question), 답변(answer), 수강후기(reviews)
 
 (+ 추가로 방과후일정 테이블을 추가하려 했으나, DB로 캘린더 형태의 데이터를 유지/보수하는 것은 어렵다고 결정,
