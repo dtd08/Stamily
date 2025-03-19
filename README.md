@@ -8,6 +8,8 @@
 - [UI 규칙](#UI-규칙)
 - [DB 구조도](#DB-구조도)
 - [페이지 별 기능](Detail.md)
+- [사용 기술](#사용-기술)
+- [도움을 주신 분](#도움을-주신-분)
 
 
 <br/><br/>
@@ -152,6 +154,21 @@ Stamily란 라틴어로 **'안정'** 의 뜻을 가진 'stabilitas' 와 **'함�
 
 
 <br/><br/>
+
+
+## 사용 기술
+### IDE
+- Intellij
+
+### DB 관련
+- MySQL
+- MySQL Workbench
+
+### 탬플릿 엔진
+- thymeleaf
+
+
+<br><br>
 
 
 ## 도움을 주신 분
