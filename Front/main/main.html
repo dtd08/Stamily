@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>STAMILY</title>
 </head>
 <body>
@@ -11,44 +12,132 @@
 
         <!-- header -->
         <header id="header">
-            <div class="logo">logo</div>
-            <div class="input-box">input box</div>
-            <div class="mypage">my page</div>
+            <div class="header container">
+                <div class="logo"><a href="main.html">STAMILY</a></div>
+                <div class="input-box">
+                    <form action="#" method="get" name="search-form" id="search-form">
+                        <input type="text" id="search-text" name="search-text" placeholder="검색할 방과후명을 작성해주세요">
+                        <button type="submit" id="search-icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="mypage">
+                    <div class="mypage-icon">
+                        <i class="fa-solid fa-circle-user fa-2x"></i>
+                    </div>
+                    <ul class="mypage-more">
+                        <li><a href="#">submenu</a></li>
+                        <li><a href="#">submenu</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <!-- image slider / span에 before로 글씨 추가
+            <article id="slider">
+                <span class="prev"><</span>
+                <span class="next">></span>
+                <div class="slider-wrap">
+                    <div class="slider s1"></div>
+                    <div class="slider s2"></div>
+                    <div class="slider s3"></div>
+                    <div class="slider s4"></div>
+                </div>
+            </article> -->
+
+            <!-- nav -->    
+            <nav id="nav">
+                <div class="nav container">
+                    <ul>
+                        <li><a href="#">menu1</a></li>
+                        <li><a href="#">menu2</a></li>
+                        <li><a href="#">menu3</a></li>
+                        <li><a href="#">menu4</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <hr>
         </header>
 
-        <!-- nav -->
-        <nav id="nav">
-            <ul>
-                <li><a href="#">menu1</a></li>
-                <li><a href="#">menu2</a></li>
-                <li><a href="#">menu3</a></li>
-                <li><a href="#">menu4</a></li>
-            </ul>
-        </nav>
+        <!-- main -->
+        <main id="main">
+            <article class="dummy"></article>
+            
+            <!-- class topics -->
+            <h3 class="topic-title">강의 목록</h3>
+            <section class="bg-topic">
+                <div class="topic">
+                    <div class="topic-img">img</div>
+                    <div class="topic-info">
+                        <h4 class="topic-name">class name</h4>
+                        <ul class="topic-desc">
+                            <li>teacher name</li>
+                            <li>class of day</li>
+                            <li>class target</li>
+                        </ul>
+                        <div class="categorys">
+                            <span class="category fir">category</span>
+                            <span class="category sec">category</span>
+                            <span class="category thr">category</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="topic">
+                    <div class="topic-img"></div>
+                    <div class="topic-info">
+                        <h4 class="topic-name">class name</h4>
+                        <ul class="topic-desc">
+                            <li>teacher name</li>
+                            <li>class of day</li>
+                            <li>class target</li>
+                            <li>category</li>
+                        </ul>
+                        <div class="categorys">
+                            <span class="category fir">category</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="topic">
+                    <div class="topic-img"></div>
+                    <div class="topic-info">
+                        <h4 class="topic-name">class name</h4>
+                        <ul class="topic-desc">
+                            <li>teacher name</li>
+                            <li>class of day</li>
+                            <li>class target</li>
+                            <li>category</li>
+                        </ul>
+                        <div class="categorys">
+                            <span class="category fir">category</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="topic">
+                    <div class="topic-img"></div>
+                    <div class="topic-info">
+                        <h4 class="topic-name">class name</h4>
+                        <ul class="topic-desc">
+                            <li>teacher name</li>
+                            <li>class of day</li>
+                            <li>class target</li>
+                            <li>category</li>
+                        </ul>
+                        <div class="categorys">
+                            <span class="category fir">category</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-        <!-- image slider -->
-        <article id="slider">
-            <!-- span에 before로 글씨 추가 -->
-            <span class="prev"><</span>
-            <span class="next">></span>
-            <div class="slider-wrap">
-                <div class="slider s1"></div>
-                <div class="slider s2"></div>
-                <div class="slider s3"></div>
-                <div class="slider s4"></div>
-            </div>
-        </article>
-
-        <!-- class topics -->
-        <section class="bg-topic">
-            <div class="topic">topic</div>
-            <div class="topic">topic</div>
-            <div class="topic">topic</div>
-            <div class="topic">topic</div>
-        </section>
+        <!-- footer -->
         <footer id="footer">
-            <div class="content"></div>
-            <div class="logo"></div>
+            <div class="footer container">
+                <div class="content">
+                    Copyright by Double Lee (이서영, 이솔지)
+                </div>
+                <div class="logo">STAMILY</div>
+            </div>
         </footer>
     </div>
 </body>
