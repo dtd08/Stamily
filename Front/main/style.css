@@ -4,7 +4,9 @@
     --header-height: 60px;
 
     --topic-width: 570px;
-    --topic-height: 300px;
+    --topic-height: 350px;
+
+    --mypage-more-heigth: 70px;
 
     --body-bc: #fefefe;
 
@@ -61,6 +63,7 @@ hr {
 #header {
     position: fixed;
     top: 0;
+
     width: 100%;
 
     background-color: var(--body-bc);
@@ -112,6 +115,10 @@ hr {
 
 /* header - mypage */
 #header .mypage {
+    position: relative;
+
+    width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: end;
@@ -119,6 +126,56 @@ hr {
 
 #header .mypage-icon {
     margin-right: 10px;
+}
+
+#header .mypage-icon:hover {
+    cursor: pointer;
+}
+
+#header .mypage-more {
+    position: absolute;
+    top: 130%;
+    right: -10px;
+
+    /* js용 css */
+    display: none;
+
+    width: 110px;
+    height: var(--mypage-more-heigth);
+    padding-top: 5px;
+
+    background-color: #e8f8c3;
+    border-radius: 8px;
+}
+
+#header .mypage-more::after {
+    position: absolute;
+    top: -25px;
+    right: 26px;
+
+    content: "";
+    
+    border-top: 0px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 35px solid #e8f8c3;
+}
+
+#header .mypage-more hr {
+    width: 75%;
+    margin: auto;
+} 
+
+#header .mypage-more li {
+    width: 100%;
+    height: calc(var(--mypage-more-heigth) / 2 - 10px);
+    padding: 5px 0 ;
+
+    text-align: center;
+}
+
+#header .mypage-more li a:hover {
+    text-decoration: underline;
 }
 
 
@@ -181,7 +238,7 @@ hr {
 /* main */
 #main {
     width: 80%;
-    margin: 0px auto 50px;
+    margin: calc(var(--header-height) + 40px) auto 50px;
 }
 
 /* dummy */
@@ -194,12 +251,14 @@ hr {
 .topic-title {
     padding: 60px 0 0;
 
-    font-size: 40px;
+    font-size: 35px;
 
     border-top: var(--main-border-set);
 }
 
 .bg-topic {
+    width: 100%;
+
     padding: 20px 0 60px;
 
     display: grid;
@@ -212,8 +271,8 @@ hr {
     position: relative;
 
     display: flex;
-    width: 570px;
-    height: 300px;
+    width: 100%;
+    height: var(--topic-height);
     
     margin: auto;
 
@@ -234,7 +293,7 @@ hr {
     position: absolute;
     left: 0;
 
-    width: calc(var(--topic-width) * 0.4);
+    width: 40%;
     height: var(--topic-height);
 
     background-color: var(--main-color);
@@ -245,7 +304,7 @@ hr {
     position: absolute;
     right: 0;
 
-    width: calc(var(--topic-width) * 0.6);
+    width: 60%;
     height: calc(var(--topic-height) - 50px);
 
     padding: 25px;
