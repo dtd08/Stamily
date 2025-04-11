@@ -204,7 +204,7 @@ input[type='radio']:checked {
 }
 
 .info input:focus {
-  outline: none;
+    outline: none;
 }
 
 .info input::placeholder {
@@ -293,8 +293,9 @@ input[type='radio']:checked {
 }
 
 .sign-btn {
+    display: none;
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
 
     width: 400px;
     padding: 8px 7px;
@@ -338,4 +339,22 @@ input[type='radio']:checked {
 
 .sign-btn:active {
     scale: 1;
+}
+
+.sign-btn.show {
+    display: block;
+    bottom: 30px;
+}
+
+
+/* sign in */
+#signin-box .info input {
+    height: 25px;
+
+    margin-bottom: 30px;
+    padding: 10px 7px 3px 7px;
+}
+
+#signin-box .info span {
+    bottom: 29px;
 }
