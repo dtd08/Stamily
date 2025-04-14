@@ -21,14 +21,14 @@ inWrap.style.display = "flex";
 upGradu.style.display = "none";
 
 /// 유효성 검사 변수
-jobChk = false;
-nameChk = false;
-nicknameChk = false;
-pwChk = false;
-pwcChk = false;
-emailChk = false;
-phoneChk = false;
-graduChk = false;
+// jobChk = false;
+// nameChk = false;
+// nicknameChk = false;
+// pwChk = false;
+// pwcChk = false;
+// emailChk = false;
+// phoneChk = false;
+// graduChk = false;
 
 
 // func
@@ -140,6 +140,7 @@ upToggleBtn.addEventListener("click", () => {
     visibleSignup();
 });
 
+
 /// === gradu 표시 여부 ===
 /// 회원가입 시 직업(학생) 선택 시
 document.getElementById("u-student").addEventListener("click", () => {
@@ -152,18 +153,11 @@ document.getElementById("u-teacher").addEventListener("click", () => {
     document.getElementById("gradu").style.display = "none";
 });
 
-/// 모든 정보가 다 작성되면
-if ((inWrap.style.display == "flex") && jobChk && nameChk && nicknameChk && pwChk) {
-    inSubmit.classList.add("show");
-} else {
-    inSubmit.classList.remove("show");
-} 
 
-if ((upWrap.style.display == "flex") &&jobChk && nameChk && nicknameChk && pwChk && pwcChk && emailChk && phoneChk) {
-    upSubmit.classList.add("show"); 
-} else {
-    upSubmit.classList.remove("show"); 
-}
+/// === 유효성 검사 ===
+
+
+
 
 /// 이름 눌렀을 때
 inForm.name.onKeyup = function() {
