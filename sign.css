@@ -10,7 +10,7 @@
     --sec-sub-color: #84fab0;
     --thr-sub-color: #8fd3f4;
     
-    --main-font-color: #192403;
+    --main-font-color: #415a08;
     --sub-font-color: #333;
 
     --main-footer-color: #cfd9df;
@@ -22,12 +22,16 @@
 * {
     margin: 0;
     padding: 0;
-
     color: var(--main-font-color);
 }
 
 body {
     background-color: var(--body-bc);
+}
+
+a {
+    color: var(--main-font-color);
+    text-decoration: none;
 }
 
 input[type='radio'] {
@@ -66,6 +70,23 @@ input[type='radio']:checked {
 
     width: 100%;
 }
+
+
+/* logo */
+#logo a {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: 20px 30px;
+
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--main-font-color);
+    
+    text-align: center;
+}
+
 
 /* toggle */
 .toggle-box, .sign-box {
@@ -293,7 +314,7 @@ input[type='radio']:checked {
 }
 
 .sign-btn {
-    display: none;
+    display: block;
     position: absolute;
     bottom: 20px;
 
@@ -341,9 +362,8 @@ input[type='radio']:checked {
     scale: 1;
 }
 
-.sign-btn.show {
-    display: block;
-    bottom: 30px;
+.sign-btn.hide {
+    display: none;
 }
 
 
