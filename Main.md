@@ -1,6 +1,3 @@
-# 주요 페이지
----
-
 # 메인
 - 페이지명: index.html
 - 파일구조: stamily/index/index.html
