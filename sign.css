@@ -75,8 +75,9 @@ input[type='radio']:checked {
 /* logo */
 #logo a {
     position: absolute;
-    top: 0;
+    top: -7px;
     left: 0;
+    right: 0;
 
     padding: 20px 30px;
 
@@ -212,7 +213,7 @@ input[type='radio']:checked {
     position: relative;
     height: 20px;
 
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     padding: 10px 7px 3px 7px;
 
     border: #ddd solid 1px;
@@ -234,7 +235,7 @@ input[type='radio']:checked {
 
 .info span {
     position: absolute;
-    bottom: 15px;
+    bottom: 20px;
     left: 0;
     right: 0;
 
@@ -252,6 +253,13 @@ input[type='radio']:checked {
 .info input:focus ~ span {
     transform-origin: bottom left;
     transform: scaleX(1);
+}
+
+.info .message {
+    position: absolute;
+    color: red;
+    top: 35px;
+    font-size: 10px;
 }
 
 .info label {
