@@ -85,32 +85,17 @@ input[type='radio']:checked {
     
     text-align: center;
 
+    transition: all 0.6s ease;
     opacity: 1;
     z-index: 999;
 }
 
-@keyframes toleft {
-    0% {
-        opacity: 1;
-    }    
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1px;
-    }
-}
-
-#logo.to-left {
-    left: 0;
-    right: none;
+#logo.disappear {
+    opacity: 0;
 }
 
 #logo.to-right {
     right: 0;
-    left: none;
 }
 
 
