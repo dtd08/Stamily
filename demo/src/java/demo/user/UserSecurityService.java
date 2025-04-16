@@ -29,11 +29,15 @@ public class UserSecurityService implements UserDetailsService {
         }
         Users users = _Users.get();
         List<GrantedAuthority> authorities = new ArrayList<>();
-//        if ("teacher".equals(userDto.getJob())) {
-//            authorities.add(new SimpleGrantedAuthority(UserRole.TEACHER.getRole()));
-//        } else {
-//            authorities.add(new SimpleGrantedAuthority(UserRole.[ROLE].getValue());
-//        }
+        if ("teacher".equals(users.getJob())) {
+            authorities.add(new SimpleGrantedAuthority("ROLE_TEACHER"));
+        } else {
+            if ("enrolled".equals(users.getAttended())) {
+                authorities.add(new SimpleGrantedAuthority("ROLE_STUDENT_ENROLLED"));
+            } else if ("graduated".equals(users.getAttended())) {
+                authorities.add(new SimpleGrantedAuthority("ROLE_STUDENT_GRADUATED"));
+            }
+        }
         return new User(users.getNickname(), users.getPassword(), authorities);
     }
 }

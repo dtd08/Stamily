@@ -16,6 +16,7 @@ public class UserService {
     public void createUser(UserDto userDto) {
         Users user = userDto.toEntity();
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setJob(userDto.getJob());
 
         if ("student".equals(user.getJob())) {
             user.setAttended(userDto.getAttended());
