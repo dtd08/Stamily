@@ -57,7 +57,7 @@ let defaultUnderline = document.querySelector("#signinForm > .name > .message");
 function invisibleSignin() {
     inInfoBox.classList.add("hidden-left");
     upToggleBox.classList.add("hidden-right");
-    
+
     setTimeout(() => {
         inInfoBox.style.display = "none";
         upToggleBox.style.display = "none";
@@ -76,22 +76,22 @@ function invisibleSignin() {
 function invisibleSignup() {
     upInfoBox.classList.add("hidden-right");
     inToggleBox.classList.add("hidden-left");
-    
+
     setTimeout(() => {
         upInfoBox.style.display = "none";
         inToggleBox.style.display = "none";
         upWrap.style.display = "none";
     }, 600);
-    
+
     upForm.job[0].checked = false;
     upForm.job[1].checked = false;
-    upForm.graduStatus[0].checked = false;
-    upForm.graduStatus[1].checked = false;
+    upForm.attended[0].checked = false;
+    upForm.attended[1].checked = false;
 
     upForm.name.value = '';
     upForm.nickname.value = '';
     upForm.password.value = '';
-    upForm.passwordChk.value = '';
+    upForm.checkPassword.value = '';
     upForm.email.value = '';
     upForm.phone.value = '';
 
@@ -281,7 +281,7 @@ function messageControl(errorMessage, underline=defaultUnderline, txt=defaultTxt
             txt.textContent = `내용이 없습니다.`;
             underline.style.backgroundColor = "red";
             return false;
-            
+
         case "ttb":  // too tiny or big, 너무 크거나 작음
             txt.textContent = `길이가 만족되지 않았습니다. (${min}~${max})`;
             underline.style.backgroundColor = "red";
@@ -336,7 +336,7 @@ function messageControl(errorMessage, underline=defaultUnderline, txt=defaultTxt
 inToggleBtn.addEventListener("click", () => {
     invisibleSignup();
     visibleSignin();
-    
+
     defaultTxt = document.querySelector("#signinForm > .name > .message");
     defaultUnderline = document.querySelector("#signinForm > .name > .message");
 });
@@ -345,7 +345,7 @@ inToggleBtn.addEventListener("click", () => {
 upToggleBtn.addEventListener("click", () => {
     invisibleSignin();
     visibleSignup();
-    
+
     defaultTxt = document.querySelector("#signupForm > .name > .message");
     defaultUnderline = document.querySelector("#signupForm > .name > .message");
 
