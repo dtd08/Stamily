@@ -73,10 +73,9 @@ input[type='radio']:checked {
 
 
 /* logo */
-#logo a {
+#logo {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -7px;
 
     padding: 20px 30px;
 
@@ -85,6 +84,33 @@ input[type='radio']:checked {
     color: var(--main-font-color);
 
     text-align: center;
+
+    opacity: 1;
+    z-index: 999;
+}
+
+@keyframes toleft {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1px;
+    }
+}
+
+#logo.to-left {
+    left: 0;
+    right: none;
+}
+
+#logo.to-right {
+    right: 0;
+    left: none;
 }
 
 
@@ -150,6 +176,10 @@ input[type='radio']:checked {
     rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 
+#signup-box {
+    margin-left: 20px;
+}
+
 
 /* 제목 */
 #title {
@@ -212,7 +242,7 @@ input[type='radio']:checked {
     position: relative;
     height: 20px;
 
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     padding: 10px 7px 3px 7px;
 
     border: #ddd solid 1px;
@@ -234,7 +264,7 @@ input[type='radio']:checked {
 
 .info span {
     position: absolute;
-    bottom: 15px;
+    bottom: 20px;
     left: 0;
     right: 0;
 
@@ -252,6 +282,13 @@ input[type='radio']:checked {
 .info input:focus ~ span {
     transform-origin: bottom left;
     transform: scaleX(1);
+}
+
+.info .message {
+    position: absolute;
+    color: red;
+    top: 35px;
+    font-size: 10px;
 }
 
 .info label {
@@ -377,4 +414,8 @@ input[type='radio']:checked {
 
 #signin-box .info span {
     bottom: 29px;
+}
+
+#signin-box .info .message {
+    top: 40px;
 }
