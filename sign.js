@@ -40,7 +40,7 @@ upCheck = {
     pwChk: false,
     email: false,
     phone: false,
-    gradu: false,
+    attended: false,
 }; // 직업, 이름, 닉네임, 비밀번호, 비번체크, 이메일, 전화번호, 졸업상태
 
 let defaultTxt = document.querySelector("#signinForm > .name > .message"); // 기본 메세지 출력창
@@ -58,10 +58,15 @@ function invisibleSignin() {
     inInfoBox.classList.add("hidden-left");
     upToggleBox.classList.add("hidden-right");
 
+    logo.classList.add("disappear");
+
     setTimeout(() => {
         inInfoBox.style.display = "none";
         upToggleBox.style.display = "none";
         inWrap.style.display = "none";
+
+        logo.classList.remove("disappear");
+        logo.classList.add("to-right");
     }, 600);
 
     inForm.job[0].checked = false;
@@ -77,10 +82,15 @@ function invisibleSignup() {
     upInfoBox.classList.add("hidden-right");
     inToggleBox.classList.add("hidden-left");
 
+    logo.classList.add("disappear");
+
     setTimeout(() => {
         upInfoBox.style.display = "none";
         inToggleBox.style.display = "none";
         upWrap.style.display = "none";
+
+        logo.classList.remove("disappear");
+        logo.classList.remove("to-right");
     }, 600);
 
     upForm.job[0].checked = false;
@@ -132,23 +142,23 @@ function isEmpty(str) {
 
 /// 글자수 제한
 function limitLen(str, min=4, max=12) {
-    return (str.length >= min && str.length <= max) ? "limit enough":"ttb";
+    return (str.trim().length >= min && str.trim().length <= max) ? "limit enough":"ttb";
 }
 
 /// 한글만 허용
 function onlyKorean(str) {
-    return (/^[가-힣]+$/.test(str)) ? "name enough":"nko";
+    return (/^[가-힣]+$/.test(str.trim())) ? "name enough":"nko";
 }
 
 /// 숫자 or 영어만 허용
 function onlyNumberAndEnglish(str) {
-    return (/^[A-Za-z0-9][A-Za-z0-9]*$/.test(str)) ? "eng enough":"nen";
+    return (/^[A-Za-z0-9][A-Za-z0-9]*$/.test(str.trim())) ? "eng enough":"nen";
 }
 
 /// 비밀번호 제한
 function strongPassword (str) {
     // 8글자 이상, 영대소문자와 특수문자 포함
-    return (/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(str)) ? "pw enough":"nmr";
+    return (/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(str.trim())) ? "pw enough":"nmr";
 }
 
 /// 비밀번호 일치 확인
@@ -159,12 +169,12 @@ function isMatch (password1, password2) {
 /// 이메일 확인
 function emailValidChk(str) {
     // [숫자 or 영어]@[숫자 or 영어].[숫자 or 영어] 형태 확인
-    return (/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/.test(str)) ? "email enough":"cef";
+    return (/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/.test(str.trim())) ? "email enough":"cef";
 }
 
 /// 전화번호 확인
 function phoneValidChk(str) {
-    return (/^\d{3}-\d{3,4}-\d{4}$/.test(str)) ? "phone enough":"cpf";
+    return (/^[\d]{2,3}-[\d]{4}-[\d]{4}$/.test(str.trim())) ? "phone enough":"cpf";
 }
 
 
@@ -241,13 +251,13 @@ function chkPw(form) {
 
 /// 비밀번호 확인에 적용
 function chkPwChk() {
-    let str = upForm.passwordChk.value;
+    let str = upForm.checkPassword.value;
     let underline = document.querySelector(`#${upForm.id} > .password-chk > span`);
     let txt = document.querySelector(`#${upForm.id} > .password-chk > .message`);
 
 
     upCheck["pwChk"] = messageControl(isEmpty(str), underline, txt);
-    upCheck["pwChk"] = messageControl(isMatch(str), underline, txt);
+    upCheck["pwChk"] = messageControl(isMatch(str, upForm.password.value), underline, txt);
 }
 
 /// 이메일에 적용
@@ -263,7 +273,7 @@ function chkEmail() {
 
 /// 전화번호에 적용
 function chkPhone() {
-    let str = upForm.email.value;
+    let str = upForm.phone.value;
     let underline = document.querySelector(`#${upForm.id} > .phone > span`);
     let txt = document.querySelector(`#${upForm.id} > .phone > .message`);
 
@@ -313,7 +323,7 @@ function messageControl(errorMessage, underline=defaultUnderline, txt=defaultTxt
             return false;
 
         case "cpf":  // check phone number formet, 전화번호 형태 확인
-            txt.textContent = `000-000(0)-0000 형식이 아닙니다.`
+            txt.textContent = `(0)00-0000-0000 형식이 아닙니다.`
             underline.style.backgroundColor = "red";
             return false;
 
@@ -325,7 +335,14 @@ function messageControl(errorMessage, underline=defaultUnderline, txt=defaultTxt
     }
 }
 
+/// 기본 메세지 & 밑줄 셋팅
+function settingMsgNUnder(form) {
+    defaultTxt = document.querySelector(`#${form.id} > .name > .message`);
+    defaultUnderline = document.querySelector(`#${form.id} > .name > span`);
 
+    defaultTxt.textContent = '';
+    defaultUnderline.style.backgroundColor = "#96e6a1";
+}
 
 
 
@@ -336,21 +353,14 @@ function messageControl(errorMessage, underline=defaultUnderline, txt=defaultTxt
 inToggleBtn.addEventListener("click", () => {
     invisibleSignup();
     visibleSignin();
-
-    defaultTxt = document.querySelector("#signinForm > .name > .message");
-    defaultUnderline = document.querySelector("#signinForm > .name > .message");
+    settingMsgNUnder(inForm);
 });
 
 /// 회원가입 하러가기 버튼 누르면 (로그인 -> 회원가입)
 upToggleBtn.addEventListener("click", () => {
     invisibleSignin();
     visibleSignup();
-
-    defaultTxt = document.querySelector("#signupForm > .name > .message");
-    defaultUnderline = document.querySelector("#signupForm > .name > .message");
-
-    defaultTxt.textContent = '';
-    defaultUnderline.style.backgroundColor = "#96e6a1";
+    settingMsgNUnder(upForm);
 });
 
 
@@ -395,6 +405,46 @@ inForm.name.addEventListener("keyup", () => {
 
 upForm.name.addEventListener("keyup", () => {
     chkName("up");
+});
+
+/// 닉네임 검사
+inForm.nickname.addEventListener("keyup", () => {
+    chkNickname("in");
+});
+upForm.nickname.addEventListener("keyup", () => {
+    chkNickname("up");
+});
+
+/// 비밀번호 검사
+inForm.password.addEventListener("keyup", () => {
+    chkPw("in");
+});
+upForm.password.addEventListener("keyup", () => {
+    chkPw("up");
+});
+
+/// 비밀번호 확인 검사
+upForm.checkPassword.addEventListener("keyup", () => {
+    chkPwChk("up");
+});
+
+/// 이메일 검사
+upForm.email.addEventListener("keyup", () => {
+    chkEmail("up");
+});
+
+/// 전화번호 검사
+upForm.phone.addEventListener("keyup", () => {
+    chkPhone("up");
+});
+
+/// 졸업여부 검사
+upForm.attended.forEach(radio => {
+    radio.addEventListener("change", (e) => {
+        // 하나도 선택되지 않으면 false
+        const selected = ![...upForm.attended].every(radio => !radio.checked);
+        upCheck["attended"] = selected; // 선택됨: true  선택안됨: false
+    })
 });
 
 
