@@ -44,7 +44,7 @@ upCheck = {
 }; // 직업, 이름, 닉네임, 비밀번호, 비번체크, 이메일, 전화번호, 졸업상태
 
 let defaultTxt = document.querySelector("#signinForm > .name > .message"); // 기본 메세지 출력창
-let defaultUnderline = document.querySelector("#signinForm > .name > .message"); // 기본 밑줄 표시
+let defaultUnderline = document.querySelector("#signinForm > .name > span"); // 기본 밑줄 표시
 
 
 
