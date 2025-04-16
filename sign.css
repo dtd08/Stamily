@@ -73,11 +73,9 @@ input[type='radio']:checked {
 
 
 /* logo */
-#logo a {
+#logo {
     position: absolute;
     top: -7px;
-    left: 0;
-    right: 0;
 
     padding: 20px 30px;
 
@@ -86,6 +84,33 @@ input[type='radio']:checked {
     color: var(--main-font-color);
     
     text-align: center;
+
+    opacity: 1;
+    z-index: 999;
+}
+
+@keyframes toleft {
+    0% {
+        opacity: 1;
+    }    
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1px;
+    }
+}
+
+#logo.to-left {
+    left: 0;
+    right: none;
+}
+
+#logo.to-right {
+    right: 0;
+    left: none;
 }
 
 
@@ -149,6 +174,10 @@ input[type='radio']:checked {
 
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, 
                 rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+#signup-box {
+    margin-left: 20px;
 }
 
 
@@ -385,4 +414,8 @@ input[type='radio']:checked {
 
 #signin-box .info span {
     bottom: 29px;
+}
+
+#signin-box .info .message {
+    top: 40px;
 }
