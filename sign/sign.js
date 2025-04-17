@@ -367,9 +367,17 @@ document.getElementById("u-student").addEventListener("click", () => {
 /// 회원가입 시 직업(선생) 선택 시 gradu state 숨김
 document.getElementById("u-teacher").addEventListener("click", () => {
     console.log("teacher");
-    document.getElementById("gradu").style.display = "none";
-});
+    upGradu.style.display = "none";
 
+    // 히든 필드로 attended=None 추가
+    let hidden = document.createElement("input");
+    hidden.type = "hidden";
+    hidden.name = "attended";
+    hidden.value = "None";
+    upForm.appendChild(hidden);
+
+    upCheck.attended = true;
+});
 
 
 /// === 로그인 유효성 검사 ===
