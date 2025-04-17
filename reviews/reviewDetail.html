@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+
+        <!-- header -->
+        <header id="header"></header>
+
+        <!-- main -->
+        <main id="main">
+            <div id="review-wrap">
+                <div class="review-title">
+                    <h1 id="title">방과후명 수강후기</h1>
+                    <button id="write">글쓰기</button>
+                </div>
+                <section class="review">
+                    <div class="top">
+                        <div class="name">이름</div>
+                        <div class="date">날짜</div>
+                        <span class="menu">:</span>
+                    </div>
+                    <p class="content">내용</p>
+                    <div class="bottom">
+                        <div class="like">좋아요</div>
+                        <div class="edit">수정</div>
+                        <div class="score-box">점수</div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- footer -->
+        <footer id="footer"></footer>
+
+        <!-- popup -->
+        <div id="write-popup">
+            <h2 id="wrtie-title">후기작성</h2>
+            <form action="#" id="review-write" method="get" name="review">
+                <textarea name="reviewContent" id="review-content"></textarea>
+                <fieldset>
+                    <!-- 별점 파트인데 어케 할지 고민 필요 -->
+                    <input type="checkbox" name="score" id="score-fir">
+                    <input type="checkbox" name="score" id="score-sec">
+                    <input type="checkbox" name="score" id="score-thr">
+                    <input type="checkbox" name="score" id="score-four">
+                    <input type="checkbox" name="score" id="score-fif">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
