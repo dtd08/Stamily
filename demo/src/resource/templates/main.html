@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <script th:src="@{/js/main.js}" defer></script>
+    <link rel="stylesheet"
+          th:href="@{'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css'}"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>STAMILY</title>
 </head>
 <body>
@@ -14,7 +17,7 @@
         <!-- header -->
         <header id="header">
             <div class="header container">
-                <div class="logo"><a href="main.html">STAMILY</a></div>
+                <div class="logo"><a th:href="@{/main}">STAMILY</a></div>
                 <div class="input-box">
                     <form action="#" method="get" name="search-form" id="search-form">
                         <input type="text" id="search-text" name="search-text" placeholder="검색할 방과후명을 작성해주세요">
@@ -25,29 +28,19 @@
                 </div>
                 <div class="mypage">
                     <div class="mypage-icon">
-                        <i class="fa-solid fa-circle-users fa-2x"></i>
+                        <i class="fa-solid fa-circle-user fa-2x"></i>
                     </div>
                     <ul class="mypage-more">
-                        <li><a href="signin.html">SIGN IN</a></li>
+                        <li>
+                            <a th:href="@{/auth}" sec:authorize="isAnonymous()">SIGN IN</a>
+                            <a th:href="@{/auth/logout}" sec:authorize="isAuthenticated()">LOG OUT</a>
+                        </li>
                         <hr>
                         <li><a href="#">MY PAGE</a></li>
                     </ul>
                 </div>
             </div>
             <hr>
-
-            <!-- image slider / span에 before로 글씨 추가
-            
-            <article id="slider">
-                <span class="prev"><</span>
-                <span class="next">></span>
-                <div class="slider-wrap">
-                    <div class="slider s1"></div>
-                    <div class="slider s2"></div>
-                    <div class="slider s3"></div>
-                    <div class="slider s4"></div>
-                </div>
-            </article> -->
 
             <!-- nav -->    
             <nav id="nav">

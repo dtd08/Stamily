@@ -14,7 +14,7 @@
     --fir-sub-color: #96e6a1;
     --sec-sub-color: #84fab0;
     --thr-sub-color: #8fd3f4;
-    
+
     --main-font-color: #192403;
     --sub-font-color: #333;
 
@@ -81,7 +81,7 @@ hr {
     font-size: 25px;
     font-weight: bold;
     color: #415a08;
-    
+
     text-align: center;
     line-height: var(--header-height);
 }
@@ -126,6 +126,7 @@ hr {
 
 #header .mypage-icon {
     margin-right: 10px;
+    width: 32px;
 }
 
 #header .mypage-icon:hover {
@@ -154,7 +155,7 @@ hr {
     right: 26px;
 
     content: "";
-    
+
     border-top: 0px solid transparent;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
@@ -164,7 +165,7 @@ hr {
 #header .mypage-more hr {
     width: 75%;
     margin: auto;
-} 
+}
 
 #header .mypage-more li {
     width: 100%;
@@ -198,10 +199,10 @@ hr {
 
     margin: 5px 0;
     padding: 4px 0;
-    
+
     text-align: center;
     color: #aaa;
-    
+
     border-right: var(--main-border-set);
 
     transition: all 0.3s ease-in;
@@ -213,7 +214,7 @@ hr {
 
 #nav ul li a:hover {
     color: var(--main-font-color);
-    
+
 }
 
 
@@ -273,7 +274,7 @@ hr {
     display: flex;
     width: 100%;
     height: var(--topic-height);
-    
+
     margin: auto;
 
     border: var(--main-border-set);
@@ -330,7 +331,7 @@ hr {
 
 .categorys .category {
     display: inline-block;
-    
+
     padding: 0px 10px 6px;
 
     background-color: var(--fir-sub-color);

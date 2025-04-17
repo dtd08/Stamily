@@ -8,17 +8,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/auth")
 @RequiredArgsConstructor
 public class SignController {
     private final UserService userService;
 
-    @GetMapping
+    @GetMapping("/auth")
     public String showAuthPage() {
         return "sign";
     }
 
-    @PostMapping("/signup")
+    @PostMapping("/auth/signup")
     public String signup(@ModelAttribute UserDto userDto, Model model) {
 
         // 비밀번호 확인
@@ -35,12 +34,17 @@ public class SignController {
         // 서비스에 DTO 넘기기
         userService.createUser(userDto);
 
-        return "sign";
+        return "main";
     }
 
-    @PostMapping("login")
-    public String login(@ModelAttribute UserDto userDto, Model model) {
-        return "sign";
+    @PostMapping("/auth/login")
+    public String loginPage() {
+        return "main";
+    }
+
+    @GetMapping("/main")
+    public String main(Model model) {
+        return "main";
     }
 
 }
