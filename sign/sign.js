@@ -198,8 +198,7 @@ function chkName(form) {
     let underline = document.querySelector(`#${target.id} > .name > span`);
     let txt = document.querySelector(`#${target.id} > .name > .message`);
 
-    targetChk["name"] = messageControl(isEmpty(str), underline, txt);
-    targetChk["name"] = messageControl(onlyKorean(str), underline, txt);
+    targetChk["name"] = (messageControl(isEmpty(str), underline, txt) && messageControl(onlyKorean(str), underline, txt));
 }
 
 /// 닉네임에 적용
@@ -221,9 +220,7 @@ function chkNickname(form) {
     let txt = document.querySelector(`#${target.id} > .nickname > .message`);
 
 
-    targetChk["nickname"] = messageControl(isEmpty(str), underline, txt);
-    targetChk["nickname"] = messageControl(limitLen(str), underline, txt);
-    targetChk["nickname"] = messageControl(onlyNumberAndEnglish(str), underline, txt);
+    targetChk["nickname"] = (messageControl(isEmpty(str), underline, txt) && messageControl(limitLen(str), underline, txt) && messageControl(onlyNumberAndEnglish(str), underline, txt));
 }
 
 /// 비밀번호에 적용
@@ -245,8 +242,7 @@ function chkPw(form) {
     let txt = document.querySelector(`#${target.id} > .password > .message`);
 
 
-    targetChk["pw"] = messageControl(isEmpty(str), underline, txt);
-    targetChk["pw"] = messageControl(strongPassword(str), underline, txt);
+    targetChk["pw"] = (messageControl(isEmpty(str), underline, txt) && messageControl(strongPassword(str), underline, txt));
 }
 
 /// 비밀번호 확인에 적용
@@ -256,8 +252,7 @@ function chkPwChk() {
     let txt = document.querySelector(`#${upForm.id} > .password-chk > .message`);
 
 
-    upCheck["pwChk"] = messageControl(isEmpty(str), underline, txt);
-    upCheck["pwChk"] = messageControl(isMatch(str, upForm.password.value), underline, txt);
+    upCheck["pwChk"] = (messageControl(isEmpty(str), underline, txt) && messageControl(isMatch(str, upForm.password.value), underline, txt));
 }
 
 /// 이메일에 적용
@@ -267,8 +262,7 @@ function chkEmail() {
     let txt = document.querySelector(`#${upForm.id} > .email > .message`);
 
 
-    upCheck["email"] = messageControl(isEmpty(str), underline, txt);
-    upCheck["email"] = messageControl(emailValidChk(str), underline, txt);
+    upCheck["email"] = messageControl(isEmpty(str), underline, txt && messageControl(emailValidChk(str), underline, txt));
 }
 
 /// 전화번호에 적용
@@ -278,8 +272,7 @@ function chkPhone() {
     let txt = document.querySelector(`#${upForm.id} > .phone > .message`);
 
 
-    upCheck["phone"] = messageControl(isEmpty(str), underline, txt);
-    upCheck["phone"] = messageControl(phoneValidChk(str), underline, txt);
+    upCheck["phone"] = messageControl(isEmpty(str), underline, txt && messageControl(phoneValidChk(str), underline, txt));
 }
 
 /// 에러 메세지 조정
@@ -330,7 +323,6 @@ function messageControl(errorMessage, underline=defaultUnderline, txt=defaultTxt
         default : // 조건 만족
             txt.textContent = '';
             underline.style.backgroundColor = "#96e6a1";
-            console.log(errorMessage);
             return true;
     }
 }
@@ -387,6 +379,12 @@ inForm.job.forEach(radio => {
         // 하나도 선택되지 않으면 false
         const selected = ![...inForm.job].every(radio => !radio.checked); // job 라디오들을 분해해 새로운 배열로 만든 후 모두 선택이 안되었는지 확인하는 코드
         inCheck["job"] = selected; // 선택됨: true  선택안됨: false
+
+        if(selected) {
+            radio.style.boxShadow = "0 0 0 1px #9bcc28";
+        } else {
+            radio.style.boxShadow = "0 0 0 1px red";
+        }
     })
 });
 
@@ -395,6 +393,12 @@ upForm.job.forEach(radio => {
         // 하나도 선택되지 않으면 false
         const selected = ![...upForm.job].every(radio => !radio.checked); // job 라디오들을 분해해 새로운 배열로 만든 후 모두 선택이 안되었는지 확인하는 코드
         upCheck["job"] = selected; // 선택됨: true  선택안됨: false
+
+        if(selected) {
+            radio.style.boxShadow = "0 0 0 1px #9bcc28";
+        } else {
+            radio.style.boxShadow = "0 0 0 1px red";
+        }
     })
 });
 
@@ -442,7 +446,11 @@ upForm.phone.addEventListener("keyup", () => {
 upForm.attended.forEach(radio => {
     radio.addEventListener("change", (e) => {
         // 하나도 선택되지 않으면 false
-        const selected = ![...upForm.attended].every(radio => !radio.checked);
+        let selected;
+
+        if (upForm.job.value === "student") selected = ![...upForm.attended].every(radio => !radio.checked);
+        else selected = true;
+
         upCheck["attended"] = selected; // 선택됨: true  선택안됨: false
     })
 });
