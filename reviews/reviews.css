@@ -133,6 +133,7 @@ hr {
 
 .reviews .review-bundle .topics .review-topic {
     width: 300px;
+    min-width: 105px;
     height: 200px;
 
     margin: 0 15px;
