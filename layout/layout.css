@@ -60,6 +60,7 @@ hr {
     top: 0;
 
     width: 100%;
+    min-width: 680px;
 
     background-color: var(--body-bc);
     z-index: 999;
