@@ -56,6 +56,7 @@ hr {
 
 /* wrap */ 
 #wrap {
+    position: relative;
     height: auto;
     min-height: 100vh;
 }
@@ -70,6 +71,7 @@ hr {
     padding: 40px 0;
 }
 
+/* title */
 #title-box {
     display: flex;
     align-items: flex-end;
@@ -84,6 +86,7 @@ hr {
     color: var(--main-font-color);
 }
 
+/* write button */
 #write-btn {
     position: relative;
     display: inline-block;
@@ -106,6 +109,7 @@ hr {
     background-color: #cdf373;
 }
 
+/* review */
 #review-wrap .review {
     width: calc(100% - 40px);
     padding: 20px;
@@ -114,7 +118,9 @@ hr {
     border-radius: 10px;
 }
 
+/* review: top */
 #review-wrap .review .top {
+    position: relative;
     display: grid;
     grid-template-columns: 8fr 1.8fr 0.2fr;
     margin-bottom: 10px;
@@ -132,12 +138,65 @@ hr {
     text-align: right;
 }
 
-#review-wrap .review .content {
-    min-height: 100px;
-    background-color: #ddd;
+#review-wrap .review .top .menu-detail {
+    position: absolute;
+    right: -70px;
+    /* 대충 말풍선 박스 띄워서 토글시킬 예정 */
 }
 
+/* review: middle */
+#review-wrap .review .content {
+    min-height: 100px;
+    padding: 0px 4px;
+}
+
+/* review: bottom */
 #review-wrap .review .bottom {
     display: grid;
     grid-template-columns: 1fr 1fr 7fr;
+}
+
+#review-wrap .review .bottom .edit {
+    text-align: center;
+}
+
+#review-wrap .review .bottom .score-box {
+    text-align: right;
+}
+
+#write-popup {
+    /* display: none; */
+
+    position: fixed;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    
+    width: 600px;
+    height: 700px;
+    padding: 20px;
+
+    background-color: var(--body-bc);
+    border: var(--main-border-set);
+    border-radius: 15px;
+}
+
+#wrtie-title {
+    font-size: 30px;
+}
+
+#write-form {
+    width: 90%;
+    height: 90%;
+    background-color: #f1f1f1;
+    margin: 20px auto;
+}
+
+#write-content {
+    width: calc(100% - 30px);
+    height: 75%;
+    padding: 15px;
+
+    border: var(--main-border-set);
+    border-radius: 5px;
 }
