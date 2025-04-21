@@ -31,6 +31,7 @@
                         <div class="name">이름</div>
                         <div class="date">20xx.xx.xx</div>
                         <span class="menu">:</span>
+                        <span class="menu-detail">신고</span>
                     </div>
                     <p class="content">내용</p>
                     <div class="bottom">
@@ -48,8 +49,8 @@
         <!-- popup -->
         <div id="write-popup">
             <h2 id="wrtie-title">후기작성</h2>
-            <form action="#" id="review-write" method="get" name="review">
-                <textarea name="reviewContent" id="review-content" placeholder="500자 내외 내용을 작성해주세요." maxlength="500"></textarea>
+            <form action="#" id="write-form" method="get" name="review">
+                <textarea name="writeContent" id="write-content" placeholder="500자 내외 내용을 작성해주세요." maxlength="500"></textarea>
                 <fieldset>
                     <!-- 별점 파트인데 어케 할지 고민 필요 -->
                     <input type="checkbox" name="scoreFir" id="score-fir">
@@ -58,6 +59,7 @@
                     <input type="checkbox" name="scoreFour" id="score-four">
                     <input type="checkbox" name="scoreFif" id="score-fif">
                 </fieldset>
+                <button id="write-submit" type="submit">작성</button>
             </form>
         </div>
     </div>
