@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../layout/layout.css">
     
     <script src="../layout/layout.js"></script>
-    <script src="reviewDetail.js"></script>
+    <script src="reviewDetail.js" defer></script>
 
     <title>Document</title>
 </head>
@@ -46,21 +46,40 @@
             </div>
         </main>
 
-        <!-- popup -->
-        <div id="write-popup">
-            <h2 id="wrtie-title">후기작성</h2>
-            <form action="#" id="write-form" method="get" name="review">
-                <textarea name="writeContent" id="write-content" placeholder="500자 내외 내용을 작성해주세요." maxlength="500"></textarea>
-                <fieldset>
-                    <!-- 별점 파트인데 어케 할지 고민 필요 -->
-                    <input type="checkbox" name="scoreFir" id="score-fir">
-                    <input type="checkbox" name="scoreSec" id="score-sec">
-                    <input type="checkbox" name="scoreThr" id="score-thr">
-                    <input type="checkbox" name="scoreFour" id="score-four">
-                    <input type="checkbox" name="scoreFif" id="score-fif">
-                </fieldset>
-                <button id="write-submit" type="submit">작성</button>
-            </form>
+        <!-- modal -->
+        <div id="modal-wrap">
+            <!-- 어두운 배경 -->
+            <div class="modal-overlay"></div>
+
+            <!-- modal form -->
+            <div id="write-modal">
+                <h2 id="wrtie-title">후기작성</h2>
+                <form action="#" id="write-form" method="post" name="review">
+                    <textarea name="writeContent" id="write-content" placeholder="500자 내외 내용을 작성해주세요." maxlength="500"></textarea>
+                    <div id="star-box">
+                        <div class="star-rating">
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5">★</label>
+                            
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4">★</label>
+                            
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3">★</label>
+                            
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2">★</label>
+                            
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1">★</label>
+                        </div>
+                    </div>
+                    <div id="btn-box">
+                        <button id="write-submit" type="submit">작성</button>
+                        <button id="write-cancle" type="button">취소</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
