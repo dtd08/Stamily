@@ -138,10 +138,19 @@ hr {
     text-align: right;
 }
 
+#review-wrap .review .top .date, .menu:hover {
+    cursor: pointer;
+}
+
 #review-wrap .review .top .menu-detail {
     position: absolute;
-    right: -70px;
-    /* 대충 말풍선 박스 띄워서 토글시킬 예정 */
+    top: -5px;
+    right: -90px;
+
+    padding: 6px 15px;
+
+    background-color: #f1f1f1;
+    border: var(--main-border-set);
 }
 
 /* review: middle */
@@ -164,21 +173,42 @@ hr {
     text-align: right;
 }
 
-#write-popup {
-    /* display: none; */
 
+/* modal */
+#modal-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+#modal-wrap .modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 어둡게 */
+    pointer-events: auto; /* 이벤트 차단 역할 */
+}
+
+#write-modal {
     position: fixed;
     top: 65%;
     left: 50%;
     transform: translate(-50%, -65%);
     
-    width: 600px;
-    height: 700px;
+    width: 70vh;
+    height: 80vh;
     padding: 20px;
 
     background-color: var(--body-bc);
     border: var(--main-border-set);
     border-radius: 15px;
+    z-index: 1000;
 }
 
 #wrtie-title {
@@ -186,17 +216,89 @@ hr {
 }
 
 #write-form {
+    position: relative;
     width: 90%;
     height: 90%;
-    background-color: #f1f1f1;
     margin: 20px auto;
 }
 
 #write-content {
     width: calc(100% - 30px);
-    height: 75%;
+    height: 70%;
     padding: 15px;
 
     border: var(--main-border-set);
     border-radius: 5px;
+    outline: none;
+}
+
+#write-content:focus {
+    outline: #ddd 1px solid;
+}
+
+/* modal - star */
+#star-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.star-rating {
+    position: relative;
+    right: 0;
+    direction: ltr; /* 오른쪽부터 별을 정렬하기 위한 트릭 */
+    unicode-bidi: bidi-override; 
+    display: inline-flex;
+}
+
+.star-rating input[type="radio"] {
+    display: none;  
+}
+
+.star-rating label {
+    font-size: 30px;
+    color: lightgray;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.star-rating input[type="radio"]:checked ~ label {
+    color: gold;
+    /* 선택된 별과 그 왼쪽 별들 색칠하기 */
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: gold;
+    /* hover 효과 (선택 전 미리 보기) */
+}
+
+/* modal - button */
+#btn-box {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    
+    display: flex;
+    justify-content: flex-end;
+}
+
+#btn-box button {
+    display: inline-block;
+    
+    padding: 7px 12px;
+    margin: 5px;
+
+    background-color: var(--main-color);    
+    border-radius: 5px;
+    border: none;
+}
+
+#btn-box button:hover {
+    cursor: pointer;
+    
+    scale: 0.97;
+    top: 2px;
+    left: 2px;
+
+    background-color: #cdf373;
 }
