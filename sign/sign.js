@@ -291,7 +291,7 @@ function messageControl(errorMessage, underline=defaultUnderline, txt=defaultTxt
             return false;
 
         case "nko":  // no korean or english, 한글이 아님
-            txt.textContent = `한글만 입력할 수 있습니다.`;
+            txt.textContent = `올바른 한글만 입력할 수 있습니다.`;
             underline.style.backgroundColor = "red";
             return false;
 
