@@ -33,6 +33,7 @@
 
 body {
     background-color: var(--body-bc);
+    user-select: none;
 }
 
 a {
@@ -68,7 +69,7 @@ hr {
     justify-content: center;
 
     width: 80%;
-    margin: calc(var(--header-height) + 40px) auto 50px;
+    margin: calc(var(--header-height) + 40px) auto 100px;
 }
 
 
