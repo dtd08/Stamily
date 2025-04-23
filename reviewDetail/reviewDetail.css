@@ -33,6 +33,7 @@
 
 body {
     background-color: var(--body-bc);
+    user-select: none;
 }
 
 a {
@@ -133,16 +134,27 @@ hr {
     font-weight: bold;
 }
 
+#review-wrap .review .top .date {
+    margin-right: 10px;
+}
+
 #review-wrap .review .top .date, .menu {
     font-size: 13px;
     text-align: right;
 }
 
-#review-wrap .review .top .date, .menu:hover {
+#review-wrap .review .top .menu {
+    position: relative;
+    text-align: center;
+}
+
+#review-wrap .review .top .menu:hover {
     cursor: pointer;
+    background-color: #f1f1f1;
 }
 
 #review-wrap .review .top .menu-detail {
+    display: none;
     position: absolute;
     top: -5px;
     right: -90px;
@@ -151,7 +163,15 @@ hr {
 
     background-color: #f1f1f1;
     border: var(--main-border-set);
+
+    user-select: none;
 }
+
+#review-wrap .review .top .menu-detail:active {
+    scale: 0.98;
+    background-color: #e1e1e1;
+}
+
 
 /* review: middle */
 #review-wrap .review .content {
