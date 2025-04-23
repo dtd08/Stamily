@@ -27,6 +27,7 @@
 
 body {
     background-color: var(--body-bc);
+    user-select: none;
 }
 
 a {
