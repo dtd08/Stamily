@@ -1,0 +1,421 @@
+/* variables */
+:root {
+    --main-border-color: #9bcc28;
+    --main-border-set: var(--main-border-color) solid;
+
+    --body-bc: #fefefe;
+
+    --main-color: #c5f359;
+    --fir-sub-color: #96e6a1;
+    --sec-sub-color: #84fab0;
+    --thr-sub-color: #8fd3f4;
+
+    --main-font-color: #415a08;
+    --sub-font-color: #333;
+
+    --main-footer-color: #cfd9df;
+    --sub-footer-color: #e2ebf0;
+}
+
+
+/* setting */
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--main-font-color);
+}
+
+body {
+    background-color: var(--body-bc);
+}
+
+a {
+    color: var(--main-font-color);
+    text-decoration: none;
+}
+
+input[type='radio'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+
+    cursor: pointer;
+    box-shadow: 0 0 0 1px var(--main-border-color);
+}
+
+input[type='radio']:checked {
+    background-color: var(--main-border-color);
+    border: 3px solid var(--body-bc);
+}
+
+
+/* wrap */
+#wrap {
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+}
+
+.sign-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100%;
+}
+
+
+/* logo */
+#logo {
+    position: absolute;
+    top: -7px;
+
+    padding: 20px 30px;
+
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--main-font-color);
+
+    text-align: center;
+
+    opacity: 1;
+    z-index: 999;
+}
+
+@keyframes toleft {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1px;
+    }
+}
+
+#logo.to-left {
+    left: 0;
+    right: none;
+}
+
+#logo.to-right {
+    right: 0;
+    left: none;
+}
+
+
+/* toggle */
+.toggle-box, .sign-box {
+    transition: all 0.6s ease;
+    opacity: 1;
+}
+
+.hidden-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.hidden-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.toggle-box .toggle {
+    text-align: center;
+}
+
+.toggle-box .toggle span {
+    position: relative;
+    top: 20px;
+
+    display: inline-block;
+
+    padding: 10px 30px;
+
+    border-radius: 30px;
+    background-color: var(--main-color);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+    rgba(0, 0, 0, 0.05) 0px 5px 10px;
+
+    font-size: 17px;
+    color: var(--main-font-color);
+
+    transition: all 0.3s ease;
+}
+
+.toggle-box .toggle span:hover {
+    cursor: pointer;
+    scale: 1.1;
+    transform: translateY(-5px);
+}
+
+
+/* 정보 박스 */
+.sign-box {
+    position: relative;
+
+    width: 400px;
+    height: 580px;
+
+    padding: 30px 70px;
+
+    border: var(--main-border-set) 5px;
+    border-radius: 20px;
+
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+    rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+#signup-box {
+    margin-left: 20px;
+}
+
+
+/* 제목 */
+#title {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 40px;
+}
+
+
+/* 학생 or 선생 */
+.jobs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 60%;
+    padding: 15px;
+    margin: 2px auto;
+
+    border: none;
+}
+
+.jobs legend {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.jobs input[type='radio'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+
+    cursor: pointer;
+    box-shadow: 0 0 0 1px var(--main-border-color);
+}
+
+.jobs input[type='radio']:checked {
+    background-color: var(--main-border-color);
+    border: 3px solid var(--body-bc);
+}
+
+.jobs label {
+    font-size: 17px;
+}
+
+
+/* 기타 정보 */
+.info {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.info input {
+    position: relative;
+    height: 20px;
+
+    margin-bottom: 20px;
+    padding: 10px 7px 3px 7px;
+
+    border: #ddd solid 1px;
+    border-bottom-color: #ddd;
+    border-radius: 3px;
+    z-index: 998;
+
+    /* box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+                rgba(0, 0, 0, 0.05) 0px 5px 10px; */
+}
+
+.info input:focus {
+    outline: none;
+}
+
+.info input::placeholder {
+    color: #aaa;
+}
+
+.info span {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+
+    /* width: 98.5%; */
+    height: 3px;
+    background-color: var(--fir-sub-color);
+
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease;
+
+    z-index: 999;
+}
+
+.info input:focus ~ span {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+.info .message {
+    position: absolute;
+    color: red;
+    top: 35px;
+    font-size: 10px;
+}
+
+.info label {
+    position: relative;
+    left: 12px;
+
+    width: 70px;
+    height: 20px;
+    padding: 10px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    line-height: 20px;
+    text-align: center;
+
+    background-color: var(--main-color);
+    border-radius: 5px;
+}
+
+
+/* 졸업 여부 */
+#gradu {
+    position: relative;
+    /* top: -5px; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+#gradu p {
+    width: 30%;
+    font-size: 15px;
+    font-weight: 500;
+    /* text-align: right; */
+}
+
+#gradu .container {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+
+    margin-left: 10px;
+    padding: 5px;
+
+    width: 70%;
+}
+
+#gradu .container div {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-size: 14px;
+}
+
+#gradu .container div label {
+    padding-left: 5px;
+}
+
+.sign-btn {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+
+    width: 400px;
+    padding: 8px 7px;
+
+    font-size: 19px;
+    font-weight: bold;
+    color: var(--main-border-color);
+
+    border-radius: 20px;
+    border: var(--main-border-color) solid 2px;
+    background-color: var(--body-bc);
+
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+}
+
+.sign-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: var(--main-border-color);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.sign-btn:hover {
+    background-color: #86b31e;
+    scale: 1.1;
+    box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);
+    color: var(--body-bc);
+}
+
+.sign-btn:hover::before {
+    scale: 3;
+}
+
+.sign-btn:active {
+    scale: 1;
+}
+
+.sign-btn.hide {
+    display: none;
+}
+
+
+/* sign in */
+#signin-box .info input {
+    height: 25px;
+
+    margin-bottom: 30px;
+    padding: 10px 7px 3px 7px;
+}
+
+#signin-box .info span {
+    bottom: 29px;
+}
+
+#signin-box .info .message {
+    top: 40px;
+}
