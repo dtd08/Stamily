@@ -1,0 +1,52 @@
+<header id="header" th:fragment="header">
+<link rel="stylesheet"
+      th:href="@{'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css'}"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="header container">
+  <div class="logo"><a th:href="@{/}">STAMILY</a></div>
+  <div class="input-box">
+    <form action="#" method="get" name="search-form" id="search-form">
+      <input type="text" id="search-text" name="search-text" placeholder="검색할 방과후명을 작성해주세요">
+      <button type="submit" id="search-icon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+  </div>
+  <div id="mypage">
+    <div id="mypage-icon">
+      <i class="fa-solid fa-circle-user fa-2x"></i>
+    </div>
+    <ul id="mypage-more">
+<!--      로그인 여부에 따라 보여지는게 달라짐-->
+      <li th:if="${#authorization.expression('!isAuthenticated()')}">
+        <a th:href="@{/auth}" >SIGN IN</a>
+      </li>
+      <li th:if="${#authorization.expression('isAuthenticated()')}">
+          <a th:href="@{/auth/logout}" onclick="logout()">LOGOUT</a>
+      </li>
+<!--      <li> 이전 코드(오류 발생 가능성 있음)-->
+<!--        <a th:href="@{/auth}" >SIGN IN</a>-->
+<!--        <a th:href="@{/auth/logout}" sec:authorization="'isAuthenticated()'" onclick="logout()">LOGOUT</a>-->
+<!--      </li>-->
+      <hr>
+      <li><a href="#">MY PAGE</a></li>
+    </ul>
+  </div>
+</div>
+<hr>
+
+<!-- nav -->
+<nav id="nav">
+  <div class="nav container">
+    <ul>
+      <li><a th:href="@{/reviews}">수강후기 모음</a></li>
+      <li><a href="#">menu2</a></li>
+      <li><a href="#">menu3</a></li>
+      <li><a href="#">menu4</a></li>
+    </ul>
+  </div>
+</nav>
+<hr>
+</header>
