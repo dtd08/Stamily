@@ -1,6 +1,7 @@
-1. HTML, CSS, JS를 기반으로 작성하였다.
-2. [코드잇](codeit.kr) 이라는 강의 사이트를 벤치마킹하였다.
-3. [인프런](https://www.inflearn.com/)을 벤치마킹하였다.
+1. Spring boot와 연동하기 전의 코드이다. (탬플릿 사용 X)
+2. HTML, CSS, JS를 기반으로 작성하였다.
+3. [코드잇](codeit.kr) 이라는 강의 사이트를 벤치마킹하였다.
+4. [인프런](https://www.inflearn.com/)을 벤치마킹하였다.
 
 [front 정리-노션](https://www.notion.so/Front-end-1dd366c5ed518092acafc05744248974)
 
