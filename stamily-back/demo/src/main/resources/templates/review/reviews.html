@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" th:href="@{/css/reviews.css}">
+  <link rel="stylesheet" th:href="@{/css/layout.css}">
+  <link rel="stylesheet"
+        th:href="@{'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css'}"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script th:src="@{/js/layout.js}" defer></script>
+  <script th:src="@{'https://code.jquery.com/jquery-latest.min.js'}"></script>
+
+  <title>STAMILY - 수강후기</title>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+  <!-- header -->
+  <header th:replace="~{layout/header :: header}"></header>
+
+  <!-- main -->
+  <main id="main">
+    <!-- review -->
+    <div id="review-wrap">
+      <section class="reviews">
+        <div class="review-info">
+          <h3 class="class-title">
+            <a href="#" title="해당 방과후 보러가기">방과후명</a>
+          </h3>
+        </div>
+        <div class="review-bundle">
+          <div class="topics">
+            <div class="review-topic">
+              <p class="name">이름(닉네임)</p>
+              <p class="content">내용</p>
+              <div class="score">점수</div>
+            </div>
+            <div class="review-topic">
+              <p class="name">이름(닉네임)</p>
+              <p class="content">내용</p>
+              <div class="score">점수</div>
+            </div>
+            <div class="review-topic">
+              <p class="name">이름(닉네임)</p>
+              <p class="content">내용</p>
+              <div class="score">점수</div>
+            </div>
+          </div>
+          <div class="more">
+            <button th:onclick="'location.href=\'/review/detail\''">더보기</button>
+            <span></span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<!-- footer -->
+<footer th:replace="~{layout/footer :: footer}"></footer>
+</body>
+</html>
