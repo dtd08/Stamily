@@ -3,3 +3,6 @@
 3. [인프런](https://www.inflearn.com/)을 벤치마킹하였다.
 
 [front 정리-노션](https://www.notion.so/Front-end-1dd366c5ed518092acafc05744248974)
+
+토픽(강좌) 상세 페이지 초기 구상안
+![Image](https://github.com/user-attachments/assets/861b8452-d8c3-4b77-b891-e9a3fe30e423)
