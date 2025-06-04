@@ -1,0 +1,44 @@
+create table topic(
+	id number(10) primary key,
+	name varchar2(50),
+	t_id number(10),
+	charge_date date,
+	start_date date,
+	end_date date,
+	days varchar2(30),
+	num_of_class number(10),
+	base_class_time number(10),
+	target number(2),
+	category varchar2(30),
+	descr varchar(200)
+);
+
+alter table topic rename column desc to descr
+
+-- 1차
+insert into topic(id, name, t_id, charge_date, start_date, end_date, days, num_of_class, base_class_time, target, category, descr) 
+values(1, 'java classic', 3, '20250520', '20250602', '20250702', 'mon,thu,wen', 15, 30, 1, 'java,basic', 'it is just test class data')
+
+insert into topic(id, name, t_id, charge_date, start_date, end_date, days, num_of_class, base_class_time, target, category, descr) 
+values(2, 'java classic', 3, '20250520', '20250602', '20250702', 'mon,thu,wen', 15, 30, 1, 'java,basic', 'it is just test class data')
+
+insert into topic(id, name, t_id, charge_date, start_date, end_date, days, num_of_class, base_class_time, target, category, descr) 
+values(3, 'java classic', 4, '20250520', '20250602', '20250702', 'mon,thu,wen', 15, 30, 1, 'java,basic', 'it is just test class data')
+
+insert into topic(id, name, t_id, charge_date, start_date, end_date, days, num_of_class, base_class_time, target, category, descr) 
+values(4, 'java classic', 4, '20250520', '20250602', '20250702', 'mon,thu,wen', 15, 30, 1, 'java,basic', 'it is just test class data')
+
+-- 2차
+insert into topic(id, name, t_id, charge_date, start_date, end_date, days, num_of_class, base_class_time, target, category, descr) 
+values(5, 'java classic', 3, '20250520', '20250602', '20250702', 'mon,thu,wen', 15, 30, 1, 'java', 'it is just test class data')
+
+insert into topic(id, name, t_id, charge_date, start_date, end_date, days, num_of_class, base_class_time, target, category, descr) 
+values(6, 'python classic', 4, '20250520', '20250602', '20250702', 'thr,fri,set', 15, 30, 1, 'python,basic', 'it is just test class data')
+
+insert into topic(id, name, t_id, charge_date, start_date, end_date, days, num_of_class, base_class_time, target, category, descr) 
+values(7, 'java classic', 3, '20250520', '20250602', '20250702', 'mon,thu,wen', 15, 30, 1, 'java,basic', 'it is just test class data')
+
+insert into topic(id, name, t_id, charge_date, start_date, end_date, days, num_of_class, base_class_time, target, category, descr) 
+values(8, 'python classic', 4, '20250520', '20250602', '20250702', 'thr,fri,set', 15, 30, 1, 'python,basic', 'it is just test class data')
+
+
