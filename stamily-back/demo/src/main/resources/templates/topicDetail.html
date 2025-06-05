@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" th:href="@{/css/topicDetail.css}">
+  <link rel="stylesheet" th:href="@{/css/layout.css}">
+  <link rel="stylesheet" th:href="@{/css/settings.css}">
+
+  <script th:src="@{/js/layout.js}" defer></script>
+  <title>STAMILY</title>
+</head>
+<body>
+<div id="wrap">
+  <!-- header -->
+  <header th:replace="~{layout/header :: header}"></header>
+
+  <!-- main -->
+  <main id="main">
+    <div class="bc"></div>
+    <div class="container">
+      <section id="headline">
+        <div class="headline">
+          <h2 class="topic-title" th:text="${detail.name}">강의명</h2>
+          <p class="descr" th:text="${detail.descr}">강의 간단 설명</p>
+
+          <div class="elements">
+            <span id="score">평점</span>
+            <span id="cnt-review">수강평수</span>
+            <span id="cnt-student">수강생수</span>
+          </div>
+
+          <p class="name" th:text="${detail.teacher.name}">강사명</p>
+
+          <div class="categories">#
+            <!-- 카테고리 갯수만큼 추가하는 코드 -->
+            <span class="category"
+                  th:each="cat : ${detail.category.split(',')}" th:text="${cat}">
+            </span>
+          </div>
+        </div>
+        <div class="topic-image">
+          <!-- 이미지 불러오기 (spring) -->
+        </div>
+      </section>
+      <section id="contents">
+        <div class="content">
+          강의 상세 설명
+          <!-- markdown 사용 (spring) -->
+        </div>
+        <article class="subscr">
+          <form class="btn-box" name="regi" method="post" th:action="@{/regi}">
+            <input type="hidden" name="to_id" th:value="${detail.id}">
+            <button type="submit" id="subscr" th:href="@{/topic/detail/}" onclick="alert('수강신청이 완료되었습니다.')">수강신청하기</button>
+          </form>
+          <ul class="subsbox">
+            <li id="name">강사명&nbsp&nbsp<span th:text="${detail.teacher.name}"></span></li>
+            <li id="days">강의 요일&nbsp&nbsp<span th:text="${detail.days}"></span></li>
+            <li id="period">강의 기간&nbsp&nbsp<span th:text="${detail.end_date}">계산 필요</span></li>
+            <li id="time">수업 시간&nbsp&nbsp<span th:text="${detail.base_class_time}"></span>시간</li>
+            <li id="level">난이도&nbsp&nbsp<span th:text="${detail.target}">학년 == 난이도?</span></li>
+            <li id="condition">조건&nbsp&nbsp<span th:text="${'d'}">컬럼 추가 필요</span></li>
+          </ul>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <footer th:replace="~{layout/footer :: footer}"></footer>
+</div>
+</body>
+</html>
