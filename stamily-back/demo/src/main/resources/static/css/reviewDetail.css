@@ -1,0 +1,324 @@
+/* variables */
+:root {
+    --main-border-set: #ddd solid 1px;
+    --header-height: 60px;
+    --footer-height: 40px;
+
+    --topic-width: 570px;
+    --topic-height: 350px;
+
+    --mypage-more-heigth: 70px;
+
+    --body-bc: #fefefe;
+
+    --main-color: #d4fc79;
+    --fir-sub-color: #96e6a1;
+    --sec-sub-color: #84fab0;
+    --thr-sub-color: #8fd3f4;
+
+    --main-font-color: #192403;
+    --sub-font-color: #333;
+
+    --main-footer-color: #cfd9df;
+    --sub-footer-color: #e2ebf0;
+}
+
+
+/* setting */
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--main-font-color);
+}
+
+body {
+    background-color: var(--body-bc);
+    user-select: none;
+}
+
+a {
+    color: var(--main-font-color);
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+hr {
+    border: var(--main-border-set);
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+
+/* wrap */
+#wrap {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+}
+
+
+/* main */
+#main {
+    width: 80%;
+    min-width: 530px;
+
+    margin: calc(var(--header-height) + 40px) auto 50px;
+    padding: 40px 0;
+}
+
+/* title */
+#title-box {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    width: 100%;
+    margin: 40px 0px 30px;
+}
+
+#title {
+    font-size: 40px;
+    color: var(--main-font-color);
+}
+
+/* write button */
+#write-btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+
+    font-weight: bold;
+    background-color: var(--main-color);
+
+    border-radius: 10px;
+    border: none;
+}
+
+#write-btn:hover {
+    cursor: pointer;
+
+    scale: 0.97;
+    top: 2px;
+    left: 2px;
+
+    background-color: #cdf373;
+}
+
+/* review */
+#review-wrap .review {
+    width: calc(100% - 40px);
+    padding: 20px;
+
+    border: var(--main-border-set);
+    border-radius: 10px;
+}
+
+/* review: top */
+#review-wrap .review .top {
+    position: relative;
+    display: grid;
+    grid-template-columns: 8fr 1.8fr 0.2fr;
+    margin-bottom: 10px;
+    min-height: 30px;
+    line-height: 30px;
+}
+
+#review-wrap .review .top .name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#review-wrap .review .top .date {
+    margin-right: 10px;
+}
+
+#review-wrap .review .top .date, .menu {
+    font-size: 13px;
+    text-align: right;
+}
+
+#review-wrap .review .top .menu {
+    position: relative;
+    text-align: center;
+}
+
+#review-wrap .review .top .menu:hover {
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+#review-wrap .review .top .menu-detail {
+    display: none;
+    position: absolute;
+    top: -5px;
+    right: -90px;
+
+    padding: 6px 15px;
+
+    background-color: #f1f1f1;
+    border: var(--main-border-set);
+
+    user-select: none;
+}
+
+#review-wrap .review .top .menu-detail:active {
+    scale: 0.98;
+    background-color: #e1e1e1;
+}
+
+
+/* review: middle */
+#review-wrap .review .content {
+    min-height: 100px;
+    padding: 0px 4px;
+}
+
+/* review: bottom */
+#review-wrap .review .bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 7fr;
+}
+
+#review-wrap .review .bottom .edit {
+    text-align: center;
+}
+
+#review-wrap .review .bottom .score-box {
+    text-align: right;
+}
+
+
+/* modal */
+#modal-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+#modal-wrap .modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 어둡게 */
+    pointer-events: auto; /* 이벤트 차단 역할 */
+}
+
+#write-modal {
+    position: fixed;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+
+    width: 70vh;
+    height: 80vh;
+    padding: 20px;
+
+    background-color: var(--body-bc);
+    border: var(--main-border-set);
+    border-radius: 15px;
+    z-index: 1000;
+}
+
+#wrtie-title {
+    font-size: 30px;
+}
+
+#write-form {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    margin: 20px auto;
+}
+
+#write-content {
+    width: calc(100% - 30px);
+    height: 70%;
+    padding: 15px;
+
+    border: var(--main-border-set);
+    border-radius: 5px;
+    outline: none;
+}
+
+#write-content:focus {
+    outline: #ddd 1px solid;
+}
+
+/* modal - star */
+#star-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.star-rating {
+    position: relative;
+    right: 0;
+    direction: ltr; /* 오른쪽부터 별을 정렬하기 위한 트릭 */
+    unicode-bidi: bidi-override;
+    display: inline-flex;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 30px;
+    color: lightgray;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.star-rating input[type="radio"]:checked ~ label {
+    color: gold;
+    /* 선택된 별과 그 왼쪽 별들 색칠하기 */
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: gold;
+    /* hover 효과 (선택 전 미리 보기) */
+}
+
+/* modal - button */
+#btn-box {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+#btn-box button {
+    display: inline-block;
+
+    padding: 7px 12px;
+    margin: 5px;
+
+    background-color: var(--main-color);
+    border-radius: 5px;
+    border: none;
+}
+
+#btn-box button:hover {
+    cursor: pointer;
+
+    scale: 0.97;
+    top: 2px;
+    left: 2px;
+
+    background-color: #cdf373;
+}

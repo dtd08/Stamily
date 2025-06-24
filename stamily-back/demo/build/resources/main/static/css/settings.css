@@ -1,0 +1,68 @@
+/* variables */
+:root {
+    --main-border-set: #ddd solid 1px;
+    --header-height: 60px;
+
+    --topic-width: 570px;
+    --topic-height: 350px;
+
+    --mypage-more-heigth: 70px;
+
+    --body-bc: #fefefe;
+
+    --main-color: #d4fc79;
+    --fir-sub-color: #96e6a1;
+    --sec-sub-color: #84fab0;
+    --thr-sub-color: #8fd3f4;
+
+    --main-font-color: #192403;
+    --sub-font-color: #333;
+
+    --main-footer-color: #cfd9df;
+    --sub-footer-color: #e2ebf0;
+}
+
+
+/* setting */
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--main-font-color);
+}
+
+body {
+    background-color: var(--body-bc);
+    user-select: none;
+}
+
+a {
+    color: var(--main-font-color);
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+hr {
+    border: var(--main-border-set);
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+#wrap {
+    width: 100%;
+    min-height: 100vh; /* 최소 높이 설정 */
+    display: flex;  /* flex:1(자리 차지) 을 사용하기 위한 코드 */
+    flex-direction: column; /* 세로 정렬 */
+}
+
+#main {
+    position: relative;
+    height: calc(100vh - var(--header-height));
+    margin-top: calc(var(--header-height) + 40px);
+    flex: 1; /* 공간 차지(footer가 main의 공간을 침범하지 않음) */
+}
