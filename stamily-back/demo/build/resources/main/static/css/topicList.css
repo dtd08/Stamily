@@ -1,0 +1,71 @@
+/* schedule title */
+#main {
+    margin-bottom: 50px;
+}
+
+#schedule-title {
+    padding: 60px 0 0;
+
+    font-size: 40px;
+
+    border-top: var(--main-border-set);
+}
+
+#period-box {
+    display: flex;
+    justify-content: end;
+    margin-top: 15px;
+}
+
+#period {
+    width: 100px;
+    height: 25px;
+
+    outline: none;
+}
+
+
+/* table - schedule list */
+#list-box {
+    max-height: 400px;
+    margin: 15px 0;
+
+    border: 2px solid var(--main-border-color);
+    border-radius: 5px;
+
+    box-shadow: #64646f33 0px 7px 20px 0px;
+    overflow: auto;
+}
+
+#schedule-list {
+    width: 100%;
+    height: 100%;
+
+    border-collapse: collapse;
+}
+
+/* thead */
+
+#schedule-list thead th {
+    position: sticky; /* 첫 줄 고정 */
+    top: 0;
+
+    padding: 15px;
+
+    color: var(--main-font-color);
+    background-color: #efefef;
+
+    border-right: var(--main-border-set);
+    border-bottom: var(--main-border-set);
+}
+
+/* tbody */
+#schedule-list tbody td {
+    padding: 15px;
+
+    border-right: var(--main-border-set);
+}
+
+#schedule-list tbody tr:hover {
+    background-color: #daf79844;
+}

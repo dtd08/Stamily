@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" th:href="@{/css/topicList.css}">
+  <link rel="stylesheet" th:href="@{/css/layout.css}">
+  <link rel="stylesheet" th:href="@{/css/settings.css}">
+
+  <script th:src="@{/js/layout.js}" defer></script>
+
+  <title>STAMILY</title>
+</head>
+<body>
+<div id="wrap">
+  <!-- header -->
+  <header th:replace="~{layout/header :: header}"></header>
+
+  <!-- main -->
+  <main id="main" class="container">
+    <!-- title -->
+    <h1 id="schedule-title">신청한 강의 모음</h1>
+
+    <!-- select:period -->
+    <section id="period-box">
+      <select name="period" id="period">
+        <!-- 전체 포함 6개만 -->
+        <option value="all">전체</option>
+        <option value="2025-01">2025년 1월</option>
+        <option value="2025-02">2025년 2월</option>
+        <option value="2025-03">2025년 3월</option>
+        <option value="2025-04">2025년 4월</option>
+        <option value="2025-05">2025년 5월</option>
+      </select>
+    </section>
+
+    <!-- table:schedule -->
+    <section id="list-box">
+      <table id="schedule-list">
+        <thead>
+        <tr>
+          <th>th</th>
+          <th>th</th>
+          <th>th</th>
+          <th>th</th>
+          <th>th</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+        </tr>
+        <tr>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+        </tr>
+        <tr>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+        </tr>
+        <tr>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+        </tr>
+        <tr>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+        </tr>
+        <tr>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+        </tr>
+        <tr>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+        </tr>
+        <tr>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+          <td>td</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer th:replace="~{layout/footer :: footer}"></footer>
+</div>
+</body>
+</html>

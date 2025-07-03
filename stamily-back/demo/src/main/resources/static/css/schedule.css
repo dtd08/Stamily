@@ -1,0 +1,127 @@
+/* schedule title */
+#main {
+    margin-bottom: 50px;
+}
+
+#schedule-title {
+    padding: 60px 0 0;
+
+    font-size: 40px;
+
+    border-top: var(--main-border-set);
+}
+
+
+/* calendar box */
+#calendar-box {
+    margin-top: 20px;
+
+    border: var(--main-border-set);
+    border-color: #aaa;
+    border-radius: 5px;
+}
+
+
+/* period */
+#period {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px;
+
+    background-color: #444;
+    border-bottom: var(--main-border-set);
+    border-color: #aaa;
+}
+
+#period #after, #before {
+    padding: 0 10px;
+    font-size: 12px;
+    color: #fff;
+}
+
+#period #after, #before:hover {
+    cursor: pointer;
+}
+
+#period p {
+    font-size: 16px;
+    color: #fff;
+}
+
+
+/* calendar */
+#calendar {
+    width: 100%;
+    padding: 5px 5px 5px 10px;
+}
+
+#calendar #days th {
+    padding: 10px 0 40px 0;
+}
+
+#calendar .only-line {
+    position: relative;
+    top: -30px;
+}
+
+/* #calendar .only-line td {
+    border-bottom: #ddd 3px solid;
+} */
+
+#calendar .week, #days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+#calendar .week .day {
+    position: relative;
+    padding: 15px 10px;
+
+    min-height: 120px;
+    min-width: calc(100% / 7);
+
+    /* background-color: #eee; */
+    border-right: var(--main-border-set);
+    border-bottom: var(--main-border-set);
+}
+
+#calendar .week .sun .num {
+    color: red;
+}
+
+#calendar .week .sat .num {
+    color: blue;
+}
+
+#calendar .week .sat {
+    border-right: none;
+}
+
+#calendar .w5 .day {
+    border-bottom: none;
+}
+
+#calendar .week .day span {
+    display: block;
+    min-height: 23px;
+
+    margin-top: 5px;
+    padding: 2px 5px;
+
+    /* 메세지 숨기기 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 테스트 일정 */
+#calendar .week .day .to_id {
+    background-color: #cff7cf;
+}
+
+#calendar .week .day .to_id2 {
+    background-color: #f4f7cf;
+}
+
