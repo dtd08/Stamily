@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" th:href="@{/css/schedule.css}">
+    <link rel="stylesheet" th:href="@{/css/layout.css}">
+    <link rel="stylesheet" th:href="@{/css/settings.css}">
+
+    <script th:src="@{/js/layout.js}" defer></script>
+
+    <title>STAMILY</title>
+</head>
+<body>
+<div id="wrap">
+    <!-- header -->
+    <header th:replace="~{layout/header :: header}"></header>
+
+    <!-- main -->
+    <main id="main" class="container">
+        <!-- title -->
+        <h1 id="schedule-title">강의 일정 확인</h1>
+
+        <!-- calendar box -->
+        <section id="calendar-box">
+
+            <!-- period -->
+            <div id="period">
+                <span id="after">◀</span>
+                <p>6월</p>
+                <span id="before">▶</span>
+            </div>
+
+            <!-- calendar -->
+            <table id="calendar">
+                <tbody>
+                <tr id="days">
+                    <th class="sun">일</th>
+                    <th>월</th>
+                    <th>화</th>
+                    <th>수</th>
+                    <th>목</th>
+                    <th>금</th>
+                    <th class="sat">토</th>
+                </tr>
+                <tr class="only-line">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="week w1">
+                    <td class="day sun">
+                        <div class="num">1</div>
+                    </td>
+                    <td class="day mon">
+                        <div class="num">2</div>
+                        <!-- 방과후 일정 표시(클래스는 방과후 아이디로) -->
+                        <span class="to_id">test schedule line</span>
+                        <span class="to_id2">sec test schedule line</span>
+                    </td>
+                    <td class="day tue">
+                        <div class="num">3</div>
+                        <span class="to_id2"></span>
+                    </td>
+                    <td class="day wed">
+                        <div class="num">4</div>
+                        <span class="to_id"></span>
+                        <span class="to_id2"></span>
+                    </td>
+                    <td class="day thu">
+                        <div class="num">5</div>
+                    </td>
+                    <td class="day fri">
+                        <div class="num">6</div>
+                        <span class="to_id"></span>
+                    </td>
+                    <td class="day sat">
+                        <div class="num">7</div>
+                    </td>
+                </tr>
+                <tr class="week w2">
+                    <td class="day sun">
+                        <div class="num">8</div>
+                    </td>
+                    <td class="day mon">
+                        <div class="num">9</div>
+                    </td>
+                    <td class="day tue">
+                        <div class="num">10</div>
+                    </td>
+                    <td class="day wed">
+                        <div class="num">11</div>
+                    </td>
+                    <td class="day thu">
+                        <div class="num">12</div>
+                    </td>
+                    <td class="day fri">
+                        <div class="num">13</div>
+                    </td>
+                    <td class="day sat">
+                        <div class="num">14</div>
+                    </td>
+                </tr>
+                <tr class="week w3">
+                    <td class="day sun">
+                        <div class="num">15</div>
+                    </td>
+                    <td class="day mon">
+                        <div class="num">16</div>
+                    </td>
+                    <td class="day tue">
+                        <div class="num">17</div>
+                    </td>
+                    <td class="day wed">
+                        <div class="num">18</div>
+                    </td>
+                    <td class="day thu">
+                        <div class="num">19</div>
+                    </td>
+                    <td class="day fri">
+                        <div class="num">20</div>
+                    </td>
+                    <td class="day sat">
+                        <div class="num">21</div>
+                    </td>
+                </tr>
+                <tr class="week w4">
+                    <td class="day sun">
+                        <div class="num">22</div>
+                    </td>
+                    <td class="day mon">
+                        <div class="num">23</div>
+                    </td>
+                    <td class="day tue">
+                        <div class="num">24</div>
+                    </td>
+                    <td class="day wed">
+                        <div class="num">25</div>
+                    </td>
+                    <td class="day thu">
+                        <div class="num">26</div>
+                    </td>
+                    <td class="day fri">
+                        <div class="num">27</div>
+                    </td>
+                    <td class="day sat">
+                        <div class="num">28</div>
+                    </td>
+                </tr>
+                <tr class="week w5">
+                    <td class="day sun">
+                        <div class="num">29</div>
+                    </td>
+                    <td class="day mon">
+                        <div class="num">30</div>
+                    </td>
+                    <td class="day tue">
+                        <div class="num"></div>
+                    </td>
+                    <td class="day wed">
+                        <div class="num"></div>
+                    </td>
+                    <td class="day thu">
+                        <div class="num"></div>
+                    </td>
+                    <td class="day fri">
+                        <div class="num"></div>
+                    </td>
+                    <td class="day sat">
+                        <div class="num"></div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer th:replace="~{layout/footer :: footer}"></footer>
+</div>
+</body>
+</html>
