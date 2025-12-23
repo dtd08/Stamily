@@ -1,0 +1,14 @@
+# 관계 entity
+create table regi(
+	id number(10) primary key,
+	u_id number(10),
+	to_id number(10),
+	regi_date date
+)
+
+
+insert into REGI (id, u_id, to_id, regi_date) values (1, 1, 1, '2025-06-04');
+insert into REGI (id, u_id, to_id, regi_date) values (2, 1, 2, '2025-06-04');
+insert into REGI (id, u_id, to_id, regi_date) values (3, 2, 3, '2025-06-04');
+insert into REGI (id, u_id, to_id, regi_date) values (4, 3, 4, '2025-06-04');
+insert into REGI (id, u_id, to_id, regi_date) rvalues (5, 4, 1, '2025-06-04');
